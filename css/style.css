@@ -158,7 +158,7 @@ body {
   clear: both;
 }
 #container {
-  position: relative;
+  position: fixed;
 }
 .mobile-nav-on {
   overflow: hidden;
