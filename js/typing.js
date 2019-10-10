@@ -22,14 +22,5 @@
     $('.fancybox').fancybox()
   }
 
-	  MainBox.click(function(event) {
-		  if (currentQR) currentQR.removeClass('showQR').addClass('hideQR');
-		  setTimeout (function(a) {
-			  QRBox.fadeOut(300,function(argument) {
-				  MainBox.removeClass('hideQR');
-			  });
-			  $('#DonateText,#donateBox,#github').removeClass('blur');
-		  },600);
-    });
   });
 })(jQuery)
