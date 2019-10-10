@@ -22,35 +22,6 @@
     $('.fancybox').fancybox()
   }
 
-
-  $(document).ready(function() {
-	  var QRBox	=	$('#QRBox');
-	  var MainBox	=	$('.MainBox');
-	  var BTCQR	=	$('#BTCQR');
-	  var AliPayQR	=	$('#AliPayQR');
-	  var WeChatQR	=	$('#WeChatQR');
-    var currentQR;
-
-	  function showQR(QR) {
-		  $('#DonateText,#donateBox,#github').addClass('blur');
-      currentQR = QR;
-		  QRBox.fadeIn(300,function(argument) {
-			  QR.addClass('showQR');
-		  });
-	  }
-
-	  $('#donateBox>li').click(function(event) {
-		  var thisID	=	$(this).attr('id');
-		  if (thisID === 'BTC') {
-			  showQR(BTCQR);
-			  new ClipboardJS('#BTCBn');
-		  } else if (thisID === 'AliPay') {
-			  showQR(AliPayQR);
-		  } else if (thisID === 'WeChat') {
-			  showQR(WeChatQR);
-		  }
-	  });
-
 	  MainBox.click(function(event) {
 		  if (currentQR) currentQR.removeClass('showQR').addClass('hideQR');
 		  setTimeout (function(a) {
