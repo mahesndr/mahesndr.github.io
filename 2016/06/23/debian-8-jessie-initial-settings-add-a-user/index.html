@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Debian 8 Jessie - Initial Settings - Add a User | Mahes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bismillahirrahmanirrahim. Noted:Setiap konfigurasi mohon perhatikan tanda “#”, dan “$”. 123456789fyiguest@linux:~$  | guest@linux:~#guest	: username: the user account you are logged in to.linux	: mach">
+<meta name="keywords" content="Debian 8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Debian 8 Jessie - Initial Settings - Add a User">
+<meta property="og:url" content="https://mahes.my.id/2016/06/23/debian-8-jessie-initial-settings-add-a-user/index.html">
+<meta property="og:site_name" content="Mahes">
+<meta property="og:description" content="Bismillahirrahmanirrahim. Noted:Setiap konfigurasi mohon perhatikan tanda “#”, dan “$”. 123456789fyiguest@linux:~$  | guest@linux:~#guest	: username: the user account you are logged in to.linux	: mach">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-17T14:39:30.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Debian 8 Jessie - Initial Settings - Add a User">
+<meta name="twitter:description" content="Bismillahirrahmanirrahim. Noted:Setiap konfigurasi mohon perhatikan tanda “#”, dan “$”. 123456789fyiguest@linux:~$  | guest@linux:~#guest	: username: the user account you are logged in to.linux	: mach">
+<meta name="twitter:creator" content="@mahesndr">
+  
+    <link rel="alternate" href="/atom.xml" title="Mahes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="Debian 8 Jessie - Initial Settings - Add a User-debian-8-jessie-initial-settings-add-a-user" class="h-entry article article-type-Debian 8 Jessie - Initial Settings - Add a User" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/stories">Blog</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+	  <a class="main-nav-link" href="/contact">Contact</a>
+	
+	
+	
+		<nav id="main-nav" class="main-nav">
+	
+	
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Debian 8 Jessie - Initial Settings - Add a User
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <p>Bismillahirrahmanirrahim.</p>
+<p><i>Noted:<br>Setiap konfigurasi mohon perhatikan tanda “#”, dan “$”.</i><br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fyi</span><br><span class="line">guest@linux:~$  | guest@linux:~<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">guest	: username: the user account you are logged <span class="keyword">in</span> to.</span><br><span class="line">linux	: machine hostname: the machine you are operating.</span><br><span class="line">~       : current working directory: the directory you are <span class="keyword">in</span>.</span><br><span class="line">	  Tilde (~) means home directory, i.e. the default directory when first logging <span class="keyword">in</span>.</span><br><span class="line">$ (Dollar sign): means you are a normal user.</span><br><span class="line"><span class="comment"># (hash):  means you are the system administrator (root).</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>If you’d like to add new user, Add like follows.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add a user "debian"</span></span><br><span class="line">root@debian:~<span class="comment"># adduser debian</span></span><br><span class="line">Adding user `debian<span class="string">' ...</span></span><br><span class="line"><span class="string">Adding new group `debian'</span> (1001) ...</span><br><span class="line">Adding new user `debian<span class="string">' (1001) with group `debian'</span> ...</span><br><span class="line">Creating home directory `/home/debian<span class="string">' ...</span></span><br><span class="line"><span class="string">Copying files from `/etc/skel'</span> ...</span><br><span class="line">Enter new UNIX password: 		<span class="comment"># set password for a user</span></span><br><span class="line">Retype new UNIX password: 		<span class="comment"># confirm</span></span><br><span class="line">passwd: password updated successfully</span><br><span class="line">Changing the user information <span class="keyword">for</span> ubuntu</span><br><span class="line">Enter the new value, or press ENTER <span class="keyword">for</span> the default</span><br><span class="line">	Full Name []:			<span class="comment"># if not needed, Enter with empty</span></span><br><span class="line">	Room Number []:</span><br><span class="line">	Work Phone []:</span><br><span class="line">	Home Phone []:</span><br><span class="line">	Other []:</span><br><span class="line">Is the information correct? [Y/n] y</span><br><span class="line">root@dlp:~<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>To limit to switch to root account, cnfigure like follows. For example, allow only “debian” user.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@debian:~<span class="comment"># usermod -G adm debian</span></span><br><span class="line">root@debian:~<span class="comment"># vi /etc/pam.d/su</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># line 15: incomment and add the group name</span></span><br><span class="line">auth   required   pam_wheel.so   group=adm</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>Barakallahu fiikum.</p>
+<h5>Mohon tidak menggunakan emotikon!</h5>
+      
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2016/06/23/debian-8-jessie-initial-settings-add-a-user/" class="article-date">
+  <time class="dt-published" datetime="2016-06-23T12:21:48.000Z" itemprop="datePublished">2016-06-23</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian-8/">Debian 8</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2016/06/23/debian-8-jessie-Initial-settings-network-settings/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Debian 8 Jessie - Initial Settings - Network Settings
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/18/debian-8-jessie-install/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Debian 8 Jessie - Install</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+  <section id="comments" class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>Mahes Personal Blog - Write about tech, and my stories <br> Made with ❤️ in Bekasi</p>
+
+
+      </div>
+    </footer>
+
+<script>
+  var disqus_shortname = 'mahesndr';
+  
+  var disqus_url = 'https://mahes.my.id/2016/06/23/debian-8-jessie-initial-settings-add-a-user/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<div id="disqus_thread"></div>
+
+      
+  <script>
+   var disqus_shortname = 'mahesndr';
+   
+   var disqus_url = 'https://mahes.my.id/2016/06/23/debian-8-jessie-initial-settings-add-a-user/';
+   
+   (function(){
+     var dsq = document.createElement('script');
+     dsq.type = 'text/javascript';
+     dsq.async = true;
+     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+  </script>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
